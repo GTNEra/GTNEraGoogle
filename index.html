@@ -97,7 +97,6 @@
       links.forEach(link => {
         let linkHref = link.getAttribute('href');
         let linkPath = linkHref.split('#')[0].replace(/\.html$/, '');
-        // Für index.html oder / als Home: Markiere Ecosystem, wenn keine Section gesprungen wird
         if (
           (currentNoExt === 'index' || currentNoExt === '') &&
           linkHref === 'index.html#ecosystem' &&
@@ -107,7 +106,6 @@
           link.setAttribute('aria-current', 'page');
           found = true;
         }
-        // Hash-Links, z.B. index.html#about
         else if (
           (currentNoExt === 'index' || currentNoExt === '') &&
           currentHash &&
@@ -117,14 +115,12 @@
           link.setAttribute('aria-current', 'page');
           found = true;
         }
-        // Andere Seiten wie community.html, blogs.html usw.
         else if (linkPath && linkPath === currentNoExt && currentNoExt !== 'index' && currentNoExt !== '') {
           link.classList.add('font-bold', 'underline');
           link.setAttribute('aria-current', 'page');
           found = true;
         }
       });
-      // Falls auf Home kein Hash und kein Treffer: Markiere Ecosystem als Fallback
       if (!found && (currentNoExt === '' || currentNoExt === 'index')) {
         const ecoLink = nav.querySelector('a[href="index.html#ecosystem"]');
         if (ecoLink) {
@@ -165,9 +161,6 @@
     <!-- Hier startet dein Content für die Hauptseite -->
   </section>
 
-</body>
-</html>
-
   <!-- INTRO -->
   <section class="max-w-3xl mx-auto mt-10 mb-8 px-4">
     <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center border border-[#FF6600]/20">
@@ -180,7 +173,7 @@
     </div>
   </section>
 
-  <!-- ECOSYSTEM NOTICE (mit klarer border und lesbarem Text) -->
+  <!-- ECOSYSTEM NOTICE -->
   <section id="notice" class="py-6 px-6 md:px-20 mt-8">
     <div class="max-w-2xl mx-auto bg-[#F7F9FC] border-l-4 border-[#FF6600] p-6 rounded-xl text-center shadow">
       <p class="text-md mb-2">
@@ -200,7 +193,7 @@
     </a>
   </div>
 
-  <!-- ECOSYSTEM SECTION mit deinen ETH-Werten und Intro -->
+  <!-- ECOSYSTEM SECTION -->
   <section id="ecosystem" class="py-12 px-6 md:px-20">
     <h3 class="text-2xl font-bold text-center mb-4">Explore the GTNEra™ Ethical Ecosystem</h3>
     <div class="max-w-2xl mx-auto mb-5 text-center">
@@ -232,189 +225,205 @@
 
     <!-- Hier startet das Cards-Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
-      <!-- KI Cards kommen hier rein wie gehabt ... -->
-      
-    <!-- Card 1: GTNEra -->
-<div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center">
-  <!-- Emoji (minimal) -->
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">💎</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for systemic resonance & co-evolution.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221ahQ1qW66g-jDSePnj6_GJNKbGlkSjtNP%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <!-- Heller, leuchtender Button, ideal für weißes Logo -->
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="1.png" alt="GTNEra Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
 
-    <!-- Card 2 -->
-<div class="flex flex-col items-center border border-[#BFF1D6]/30 rounded-2xl p-4 bg-white shadow-[0_4px_28px_0_rgba(51,193,114,0.07)] hover:shadow-[0_8px_32px_0_rgba(51,193,114,0.13)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">🧒</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Kids</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for playful learning, creativity and emotional exploration.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2211EktsyF3U2ttvNNsEfW-QBDp1P5DEy5D%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#D4FBE1]/60 shadow-[0_4px_16px_0_rgba(51,193,114,0.10)] hover:shadow-[0_8px_20px_0_rgba(51,193,114,0.16)] transition group-hover:scale-110" style="background:#E7FFF3;">
-      <img src="2.png" alt="GTNEra Kids Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#33C172">Try Now</span>
-  </a>
-</div>
+      <!-- Card 1: GTNEra -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">💎</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for systemic resonance & co-evolution.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221ahQ1qW66g-jDSePnj6_GJNKbGlkSjtNP%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FFE0CC;">
+              <img src="1.png" alt="GTNEra Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
 
- <!-- Card 3: GTNEra Edu -->
-<div class="flex flex-col items-center border border-[#B3E4FA]/30 rounded-2xl p-4 bg-white shadow-[0_4px_28px_0_rgba(54,170,214,0.07)] hover:shadow-[0_8px_32px_0_rgba(54,170,214,0.11)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">🎓</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Edu</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for deep learning, reflection and visual clarity.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221Pdykro1iIm-5WYhjYKrb0d3BcN-CGChj%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#D6EEFB]/60 shadow-[0_4px_16px_0_rgba(54,170,214,0.09)] hover:shadow-[0_8px_22px_0_rgba(54,170,214,0.16)] transition group-hover:scale-110" style="background:#F3FBFF;">
-      <img src="3.png" alt="GTNEra Edu Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#36AAD6">Try Now</span>
-  </a>
-</div>
+      <!-- Card 2: GTNEra Kids -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">🧒</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Kids</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for playful learning, creativity and emotional exploration.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2211EktsyF3U2ttvNNsEfW-QBDp1P5DEy5D%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FFE0CC;">
+              <img src="2.png" alt="GTNEra Kids Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
+      <!-- Card 3: GTNEra Edu -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">🎓</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Edu</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for knowledge, teaching and education for all ages.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221j5Gz8yDFvjaU7A9wa6A9FENdKUM1qYDo%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FFE0CC;">
+              <img src="3.png" alt="GTNEra Edu Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
 
-<!-- Card 4: GTNEra Juris -->
-<div class="flex flex-col items-center border border-[#FFF3C3]/40 rounded-2xl p-4 bg-white shadow-[0_4px_22px_0_rgba(249,215,51,0.08)] hover:shadow-[0_8px_28px_0_rgba(249,215,51,0.13)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">⚖️</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Juris</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for legal clarity, justice and ethical reasoning.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yEJr_uIxmm3Ry1Rc7aopQr1xmzh5fHkr%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FFF9E3]/60 shadow-[0_4px_14px_0_rgba(249,215,51,0.07)] hover:shadow-[0_8px_18px_0_rgba(249,215,51,0.14)] transition group-hover:scale-110" style="background:#FFFCEB;">
-      <img src="4.png" alt="GTNEra Juris Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#F9D733">Try Now</span>
-  </a>
-</div>
+      <!-- Card 4: GTNEra Juris -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">⚖️</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Juris</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for legal clarity, justice and ethical reasoning.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yEJr_uIxmm3Ry1Rc7aopQr1xmzh5fHkr%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FFE0CC;">
+              <img src="4.png" alt="GTNEra Juris Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
 
-<!-- Card 5: GTNEra Polis -->
-<div class="flex flex-col items-center border border-[#DFE7FB]/40 rounded-2xl p-4 bg-white shadow-[0_4px_22px_0_rgba(132,154,255,0.07)] hover:shadow-[0_8px_26px_0_rgba(132,154,255,0.13)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">🏛️</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Polis</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for democracy, civic ethics and urban design.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221jbb_QHm6kXSO6dYV_Wwn6tK5816O3FsW%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#E4E8F7]/60 shadow-[0_4px_13px_0_rgba(132,154,255,0.07)] hover:shadow-[0_8px_16px_0_rgba(132,154,255,0.12)] transition group-hover:scale-110" style="background:#F6F7FF;">
-      <img src="5.png" alt="GTNEra Polis Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#849AFF">Try Now</span>
-  </a>
-</div>
+      <!-- Card 5: GTNEra Polis -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">🏛️</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Polis</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for democracy, civic ethics and urban design.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221jbb_QHm6kXSO6dYV_Wwn6tK5816O3FsW%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FFE0CC;">
+              <img src="5.png" alt="GTNEra Polis Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
 
-<!-- Card 6: GTNEra Visio -->
-<div class="flex flex-col items-center border border-[#F2DBF9]/30 rounded-2xl p-4 bg-white shadow-[0_4px_22px_0_rgba(214,90,245,0.06)] hover:shadow-[0_8px_24px_0_rgba(214,90,245,0.13)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">🔮</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Visio</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for deep learning, reflection and visual clarity.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2219cAllojcuhPtreDxg05-aK3cdKdtTAOq%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#F8E9FB]/60 shadow-[0_4px_12px_0_rgba(214,90,245,0.08)] hover:shadow-[0_8px_16px_0_rgba(214,90,245,0.15)] transition group-hover:scale-110" style="background:#FCF6FE;">
-      <img src="6.png" alt="GTNEra Visio Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#D65AF5">Try Now</span>
-  </a>
-</div>
+      <!-- Card 6: GTNEra Visio -->
+      <div class="flex flex-col items-center border border-[#F2DBF9]/30 rounded-2xl p-4 bg-white shadow-[0_4px_22px_0_rgba(214,90,245,0.06)] hover:shadow-[0_8px_24px_0_rgba(214,90,245,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">🔮</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Visio</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for deep learning, reflection and visual clarity.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2219cAllojcuhPtreDxg05-aK3cdKdtTAOq%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#F8E9FB]/60 shadow-[0_4px_12px_0_rgba(214,90,245,0.08)] hover:shadow-[0_8px_16px_0_rgba(214,90,245,0.15)] transition group-hover:scale-110" style="background:#FCF6FE;">
+              <img src="6.png" alt="GTNEra Visio Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#D65AF5">Try Now</span>
+          </a>
+        </div>
+      </div>
 
-<!-- Card 7: GTNEra Love -->
-<div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">❤️</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Love</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for conscious love, emotional clarity and relational resonance.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221BFWpjZsIv9Vd6VLUQNhIMM5yu84YmCV5%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FEE0EC;">
-      <img src="7.png" alt="GTNEra Love Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
+      <!-- Card 7: GTNEra Love -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">❤️</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Love</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for conscious love, emotional clarity and relational resonance.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221BFWpjZsIv9Vd6VLUQNhIMM5yu84YmCV5%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FEE0EC;">
+              <img src="7.png" alt="GTNEra Love Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
 
-    <!-- Card 8: GTNEra Health -->
-<div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">🩺</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Health</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for embodied clarity, mental well-being and integrative health.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2212YAcT2B7lxWDXUn4HS3dm4PLXkTLZo7c%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#E7FFF3;">
-      <img src="8.png" alt="GTNEra Health Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
+      <!-- Card 8: GTNEra Health -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">🩺</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Health</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for embodied clarity, mental well-being and integrative health.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2212YAcT2B7lxWDXUn4HS3dm4PLXkTLZo7c%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#E7FFF3;">
+              <img src="8.png" alt="GTNEra Health Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
 
-<!-- Card 9: GTNEra Pets -->
-<div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">🐾</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Pets</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for animal care, interspecies empathy and mindful companionship.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221nZwyyoLkHCw_tIklsZqK6PIC-YbWEfeF%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FFF8E7;">
-      <img src="9.png" alt="GTNEra Pets Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
+      <!-- Card 9: GTNEra Pets -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">🐾</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Pets</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for animal care, interspecies empathy and mindful companionship.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221nZwyyoLkHCw_tIklsZqK6PIC-YbWEfeF%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#FFF8E7;">
+              <img src="9.png" alt="GTNEra Pets Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
 
-<!-- Card 10: GTNEra Botanics -->
-<div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center">
-  <div class="mb-2 flex items-center justify-center">
-    <span class="text-4xl">🌿</span>
-  </div>
-  <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Botanics</div>
-  <div class="text-sm text-gray-600 mb-4">
-    Your ethical human AI partner for herbal wisdom, ecological beauty and nature-connected clarity.
-  </div>
-  <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221pu4HDfmQOB2zIMBLMdxRu4O1wCrgWOSF%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#D4FBE1;">
-      <img src="10.png" alt="GTNEra Botanics Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
+      <!-- Card 10: GTNEra Botanics -->
+      <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center h-full min-h-[390px]">
+        <div class="mb-2 flex items-center justify-center">
+          <span class="text-4xl">🌿</span>
+        </div>
+        <div class="font-semibold text-lg md:text-xl mb-1">GTNEra Botanics</div>
+        <div class="text-sm text-gray-600 mb-4">
+          Your ethical human AI partner for herbal wisdom, ecological beauty and nature-connected clarity.
+        </div>
+        <div class="mt-auto flex flex-col items-center w-full">
+          <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221pu4HDfmQOB2zIMBLMdxRu4O1wCrgWOSF%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+             target="_blank" class="flex flex-col items-center group">
+            <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition group-hover:scale-110" style="background:#D4FBE1;">
+              <img src="10.png" alt="GTNEra Botanics Logo" class="object-cover w-full h-full" />
+            </span>
+            <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
+          </a>
+        </div>
+      </div>
 
 <!-- Card 11: GTNEra Öko -->
 <div class="flex flex-col items-center border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] hover:shadow-[0_8px_36px_0_rgba(255,102,0,0.13)] transition hover:scale-105 group text-center">
