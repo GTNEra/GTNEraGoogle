@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GTNEra™ Services</title>
+  <title>GTNEra™ Blogs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -72,17 +72,50 @@
       <img src="logo.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12" />
       <span class="text-xl md:text-3xl font-bold" style="color:#1E2A38; letter-spacing:0.02em;">GTNEra™</span>
     </div>
-    <nav class="flex flex-col space-y-3 text-base font-medium text-left
+    <nav id="gtn-nav" class="flex flex-col space-y-3 text-base font-medium text-left
                 md:flex-row md:space-y-0 md:space-x-5 md:text-sm md:text-left">
       <a href="index.html#ecosystem" class="hover:text-[#FF6600]">Ecosystem</a>
       <a href="index.html#ens" class="hover:text-[#FF6600]">ENS</a>
       <a href="community.html" class="hover:text-[#FF6600]">Community</a>
       <a href="blogs.html" class="hover:text-[#FF6600]">Blogs</a>
       <a href="classes.html" class="hover:text-[#FF6600]">Classes</a>
-      <a href="services.html" class="font-bold underline hover:text-[#FF6600]">Services</a>
+      <a href="services.html" class="hover:text-[#FF6600]">Services</a>
       <a href="index.html#about" class="hover:text-[#FF6600]">About</a>
     </nav>
   </header>
+
+  <!-- Automatische Nav-Aktivierung -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const nav = document.getElementById('gtn-nav');
+      const links = nav.querySelectorAll('a');
+      let currentPath = location.pathname.split('/').pop();
+      if (!currentPath) currentPath = 'index.html';
+      const currentNoExt = currentPath.replace(/\.html$/, '');
+      const currentHash = location.hash;
+      let found = false;
+      links.forEach(link => {
+        let linkHref = link.getAttribute('href');
+        let linkPath = linkHref.split('#')[0].replace(/\.html$/, '');
+        if (linkPath === currentNoExt) {
+          link.classList.add('font-bold', 'underline');
+          link.setAttribute('aria-current', 'page');
+          found = true;
+        } else if (!found && linkHref === currentPath + currentHash) {
+          link.classList.add('font-bold', 'underline');
+          link.setAttribute('aria-current', 'page');
+          found = true;
+        }
+      });
+      if (!found && (currentNoExt === '' || currentNoExt === 'index')) {
+        const firstLink = nav.querySelector('a[href^="index.html"]');
+        if (firstLink) {
+          firstLink.classList.add('font-bold', 'underline');
+          firstLink.setAttribute('aria-current', 'page');
+        }
+      }
+    });
+  </script>
 
   <!-- Zwei Logos direkt nach dem Header -->
   <div class="flex items-end justify-center gap-6 md:gap-16 mt-10 mb-8">
@@ -109,6 +142,13 @@
          class="gtn-btn mt-2 px-5 py-1.5 text-sm font-semibold" style="min-width:104px;">Visit TeNAI</a>
     </div>
   </div>
+
+  <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
+    <!-- Hier beginnt dein Blogs-Content -->
+  </section>
+
+</body>
+</html>
 
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
   <div class="bg-white rounded-2xl shadow-lg p-8 text-center border border-[#FF6600]/20">
