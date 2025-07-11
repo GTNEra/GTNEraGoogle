@@ -3,32 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GTNEra™ Blogs</title>
+  <title>GTNEra™ Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { background: #f7fafd; }
-    .gtn-link { color: #1E2A38; }
-    .gtn-link:hover { color: #FF6600; }
-    .gtn-btn { background: #FF6600; color: #fff; }
-    .gtn-btn:hover { background: #1E2A38; color: #fff; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+    }
+    .logo {
+      height: 48px;
+      width: auto;
+    }
+    .card-logo {
+      height: 56px;
+      width: 56px;
+      object-fit: contain;
+    }
+    .gtn-btn {
+      background: #FF6600;
+      color: #fff;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(255,102,0,0.09);
+      padding: 0.85rem 2.2rem 0.85rem 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .gtn-btn:hover {
+      background: #e65c00;
+      transform: translateY(-2px) scale(1.04);
+    }
+    .gtn-btn-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 9999px;
+      background: #fff;
+      object-fit: contain;
+      box-shadow: 0 2px 7px rgba(255,102,0,0.12);
+      margin-right: 0.45rem;
+    }
+    .ethics-badge {
+      background: #FFEDE0;
+      color: #FF6600;
+      font-weight: 600;
+      padding: 0.35rem 1.1rem;
+      border-radius: 9999px;
+      margin: 0 0.18rem 0.4rem 0;
+      display: inline-block;
+      font-size: 1em;
+    }
+    @media (max-width: 640px) {
+      .card-logo, .gtn-btn-logo {
+        height: 32px;
+        width: 32px;
+      }
+    }
   </style>
 </head>
-<body class="font-sans">
-  <header class="p-6 flex justify-between items-center shadow bg-white">
-  <div class="flex items-center space-x-2">
-    <img src="1.png" alt="GTNEra Logo" class="h-8 md:h-11 logo" />
-    <span class="text-xs md:text-base font-bold" style="color:#1E2A38; letter-spacing:0.02em;">GTNEra™</span>
+<body class="text-[#1E2A38] bg-gradient-to-b from-white via-[#F4F5F7] to-white">
+
+  <!-- HEADER: Logo und Text -->
+  <header class="p-6 flex justify-between items-center bg-white shadow">
+    <div class="flex items-center space-x-2">
+      <img src="logo.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12" />
+      <span class="text-xl md:text-3xl font-bold" style="color:#1E2A38; letter-spacing:0.02em;">GTNEra™</span>
+    </div>
+    <nav class="flex flex-col space-y-3 text-base font-medium text-left
+                md:flex-row md:space-y-0 md:space-x-5 md:text-sm md:text-left">
+      <a href="index.html#ecosystem" class="hover:text-[#FF6600]">Ecosystem</a>
+      <a href="index.html#ens" class="hover:text-[#FF6600]">ENS</a>
+      <a href="community.html" class="hover:text-[#FF6600]">Community</a>
+      <a href="blogs.html" class="hover:text-[#FF6600]">Blogs</a>
+      <a href="classes.html" class="hover:text-[#FF6600]">Classes</a>
+      <a href="services.html" class="font-bold underline hover:text-[#FF6600]">Services</a>
+      <a href="index.html#about" class="hover:text-[#FF6600]">About</a>
+    </nav>
+  </header>
+
+  <!-- Zwei Logos direkt nach dem Header -->
+  <div class="flex items-end justify-center gap-6 md:gap-16 mt-10 mb-8">
+    <!-- GTNEra Logo + Button -->
+    <div class="flex flex-col items-center">
+      <a href="https://gtnera.ai" target="_blank" class="block">
+        <img src="logogtnbig.png" alt="GTNEra Logo"
+             class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-2xl shadow"
+             style="border: 2.5px solid #FFE0CC; box-shadow: 0 4px 18px #FF660020;" />
+      </a>
+      <span class="block text-sm md:text-base font-bold tracking-wide text-[#1E2A38] mt-2">GTNEra™</span>
+      <a href="https://gtnera.ai" target="_blank"
+         class="gtn-btn mt-2 px-5 py-1.5 text-sm font-semibold" style="min-width:104px;">Visit GTNEra</a>
+    </div>
+    <!-- TeNAI Logo + Button -->
+    <div class="flex flex-col items-center">
+      <a href="https://tenai.tech" target="_blank" class="block">
+        <img src="logotnimiddel.png" alt="TeNAI Logo"
+             class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-2xl shadow"
+             style="border: 2.5px solid #FFE0CC; box-shadow: 0 4px 18px #FF660020;" />
+      </a>
+      <span class="block text-sm md:text-base font-bold tracking-wide text-[#1E2A38] mt-2">TeNAI™</span>
+      <a href="https://tenai.tech" target="_blank"
+         class="gtn-btn mt-2 px-5 py-1.5 text-sm font-semibold" style="min-width:104px;">Visit TeNAI</a>
+    </div>
   </div>
-  <nav class="space-x-5 text-sm font-medium">
-    <a href="index.html#ecosystem" class="gtn-link hover:text-[#FF6600]">Ecosystem</a>
-    <a href="community.html" class="gtn-link hover:text-[#FF6600]">Community</a>
-    <a href="blogs.html" class="gtn-link hover:text-[#FF6600]">Blogs</a>
-    <a href="classes.html" class="gtn-link hover:text-[#FF6600]">Classes</a>
-    <a href="services.html" class="gtn-link font-bold underline">Services</a>
-    <a href="index.html#about" class="gtn-link hover:text-[#FF6600]">About</a>
-  </nav>
-</header>
 
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
   <div class="bg-white rounded-2xl shadow-lg p-8 text-center border border-[#FF6600]/20">
