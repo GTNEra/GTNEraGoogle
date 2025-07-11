@@ -247,10 +247,10 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="flex flex-col items-center border rounded-2xl p-4 shadow-[0_6px_32px_0_rgba(255,102,0,0.11)] hover:shadow-[0_10px_36px_0_rgba(255,102,0,0.18)] transition hover:scale-105 bg-white group text-center">
-  <!-- Emoji im soften orangen Kreis -->
+   <div class="flex flex-col items-center border rounded-2xl p-4 shadow-[0_6px_32px_0_rgba(255,102,0,0.11)] hover:shadow-[0_10px_36px_0_rgba(255,102,0,0.18)] transition hover:scale-105 bg-white group text-center">
+  <!-- Emoji oder Icon -->
   <div class="mb-2 flex items-center justify-center">
-    <span class="inline-flex items-center justify-center rounded-full bg-[#FF660015] w-14 h-14 text-4xl">
+    <span class="inline-flex items-center justify-center rounded-full bg-[#FFE0CC] w-14 h-14 text-4xl">
       🧒
     </span>
   </div>
@@ -260,12 +260,13 @@
   </div>
   <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2211EktsyF3U2ttvNNsEfW-QBDp1P5DEy5D%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
      target="_blank" class="flex flex-col items-center group mt-2">
-    <!-- Rundes weißes Logo-Button-Design -->
-    <span class="flex items-center justify-center rounded-full bg-white shadow-[0_2px_7px_rgba(255,102,0,0.12)] border-2 border-[#FFE0CC] w-16 h-16 mb-2 transition group-hover:scale-110">
-      <img src="2.png" alt="GTNEra Kids Logo" class="h-10 w-10 object-contain" />
+    <!-- Logo als runder, vollfarbiger Kreis (Logo füllt Kreis aus, ohne Weiß) -->
+    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2" style="background:#3AC28A;">
+      <!-- Beispiel: kids-Logo, quadratisch -->
+      <img src="2.png" alt="GTNEra Kids Logo" class="object-cover w-full h-full" />
     </span>
-    <!-- Orange Try Now Button im GTN-Style -->
-    <span class="gtn-btn px-6 py-2 text-base mt-1">Try Now</span>
+    <!-- Nur orange Try Now Schrift, kein Button -->
+    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
   </a>
 </div>
 
