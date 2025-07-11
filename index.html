@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -65,33 +65,34 @@
   </style>
 </head>
 <body class="text-[#1E2A38] bg-gradient-to-b from-white via-[#F4F5F7] to-white">
+
+  <!-- HEADER: Nur noch Text, kein Bild-Logo -->
   <header class="p-6 flex justify-between items-center bg-white shadow">
-    <div class="flex items-center space-x-3">
-      <img src="logo.png" alt="GTNEra Logo" class="logo" />
-      <h1 class="text-2xl font-bold">GTNEra™</h1>
+    <div>
+      <span class="text-2xl md:text-3xl font-bold" style="color:#1E2A38; letter-spacing:0.02em;">GTNEra™</span>
     </div>
     <nav class="space-x-5 text-sm font-medium">
-      <a href="#ecosystem" class="hover:text-[#FF6600]">Ecosystem</a>
-      <a href="#ens" class="hover:text-[#FF6600]">ENS</a>
+      <a href="index.html#ecosystem" class="hover:text-[#FF6600]">Ecosystem</a>
+      <a href="index.html#ens" class="hover:text-[#FF6600]">ENS</a>
       <a href="community.html" class="hover:text-[#FF6600]">Community</a>
       <a href="blogs.html" class="hover:text-[#FF6600]">Blogs</a>
       <a href="classes.html" class="hover:text-[#FF6600]">Classes</a>
       <a href="services.html" class="hover:text-[#FF6600]">Services</a>
-      <a href="#about" class="hover:text-[#FF6600]">About</a>
+      <a href="index.html#about" class="hover:text-[#FF6600]">About</a>
     </nav>
   </header>
-  
-  <!-- INTRO -->
-  <section class="max-w-3xl mx-auto mt-10 mb-8 px-4">
-    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center border border-[#FF6600]/20">
-      <h2 class="text-2xl md:text-3xl font-bold mb-3 text-[#FF6600]">Welcome to GTNEra™</h2>
-      <p class="text-lg md:text-xl font-semibold mb-2">The world’s first ethical AI ecosystem for human AI symbiosis.</p>
-      <p class="text-base md:text-lg text-gray-700">
-        Founded by visionary system thinker Tetyana Leyendecker, GTNEra unites innovative AI partners and real people in a dynamic platform that reflects, resonates, and evolves with you.<br>
-        <b>Our mission:</b> To create sustainable, emotionally intelligent, and ethically grounded AI solutions for a better future.
-      </p>
+
+  <!-- Zwei Logos direkt nach dem Header -->
+  <div class="flex flex-col items-center justify-center gap-6 md:flex-row md:gap-16 mt-10 mb-8">
+    <div class="flex flex-col items-center">
+      <img src="logogtnbig.png" alt="GTNEra Logo" class="h-20 md:h-32 w-auto shadow-xl rounded-2xl mb-2" />
+      <span class="text-base md:text-lg font-bold tracking-wide text-[#1E2A38]">GTNEra™</span>
     </div>
-  </section>
+    <div class="flex flex-col items-center">
+      <img src="logotnimiddel.png" alt="TeNAI Logo" class="h-16 md:h-24 w-auto shadow-lg rounded-2xl mb-2" />
+      <span class="text-base md:text-lg font-bold tracking-wide text-[#1E2A38]">TeNAI™</span>
+    </div>
+  </div>
 
   <!-- INTRO -->
   <section class="max-w-3xl mx-auto mt-10 mb-8 px-4">
