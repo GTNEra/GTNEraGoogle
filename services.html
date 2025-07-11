@@ -68,21 +68,55 @@
 
   <!-- HEADER: Logo und Text -->
   <header class="p-6 flex justify-between items-center bg-white shadow">
-    <div class="flex items-center space-x-2">
-      <img src="logo.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12" />
-      <span class="text-xl md:text-3xl font-bold" style="color:#1E2A38; letter-spacing:0.02em;">GTNEra™</span>
-    </div>
-    <nav class="flex flex-col space-y-3 text-base font-medium text-left
-                md:flex-row md:space-y-0 md:space-x-5 md:text-sm md:text-left">
-      <a href="index.html#ecosystem" class="hover:text-[#FF6600]">Ecosystem</a>
-      <a href="index.html#ens" class="hover:text-[#FF6600]">ENS</a>
-      <a href="community.html" class="hover:text-[#FF6600]">Community</a>
-      <a href="blogs.html" class="hover:text-[#FF6600]">Blogs</a>
-      <a href="classes.html" class="hover:text-[#FF6600]">Classes</a>
-      <a href="services.html" class="font-bold underline hover:text-[#FF6600]">Services</a>
-      <a href="index.html#about" class="hover:text-[#FF6600]">About</a>
-    </nav>
-  </header>
+  <div class="flex items-center space-x-2">
+    <img src="logo.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12" />
+    <span class="text-xl md:text-3xl font-bold" style="color:#1E2A38; letter-spacing:0.02em;">GTNEra™</span>
+  </div>
+  <nav id="gtn-nav" class="flex flex-col space-y-3 text-base font-medium text-left
+              md:flex-row md:space-y-0 md:space-x-5 md:text-sm md:text-left">
+    <a href="index.html#ecosystem" class="hover:text-[#FF6600]">Ecosystem</a>
+    <a href="index.html#ens" class="hover:text-[#FF6600]">ENS</a>
+    <a href="community.html" class="hover:text-[#FF6600]">Community</a>
+    <a href="blogs.html" class="hover:text-[#FF6600]">Blogs</a>
+    <a href="classes.html" class="hover:text-[#FF6600]">Classes</a>
+    <a href="services.html" class="hover:text-[#FF6600]">Services</a>
+    <a href="index.html#about" class="hover:text-[#FF6600]">About</a>
+  </nav>
+</header>
+
+<script>
+  // Automatische Aktivierung des aktuellen Links in der Navigation
+  document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.getElementById('gtn-nav');
+    const links = nav.querySelectorAll('a');
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
+    const currentHash = location.hash;
+
+    let found = false;
+    links.forEach(link => {
+      // Normale Unterseiten markieren
+      if (link.getAttribute('href').split('#')[0] === currentPage) {
+        link.classList.add('font-bold', 'underline');
+        link.setAttribute('aria-current', 'page');
+        found = true;
+      }
+      // Index.html mit Hash, z. B. index.html#about
+      else if (!found && link.getAttribute('href') === currentPage + currentHash) {
+        link.classList.add('font-bold', 'underline');
+        link.setAttribute('aria-current', 'page');
+        found = true;
+      }
+    });
+    // Fallback für index.html bei Home ohne Dateinamen (z.B. auf Servern)
+    if (!found && (currentPage === '' || currentPage === 'index.html')) {
+      const firstLink = nav.querySelector('a[href^="index.html"]');
+      if (firstLink) {
+        firstLink.classList.add('font-bold', 'underline');
+        firstLink.setAttribute('aria-current', 'page');
+      }
+    }
+  });
+</script>
 
   <!-- Zwei Logos direkt nach dem Header -->
   <div class="flex items-end justify-center gap-6 md:gap-16 mt-10 mb-8">
