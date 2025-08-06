@@ -9,9 +9,8 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      /* Новый фон: глубокий тёмно-синий градиент */
-      background: linear-gradient(135deg, #1a2240 0%, #223377 100%);
-      color: #EFF3F8;
+      background: #e9f3fa; /* Светло-голубой фон всей страницы */
+      color: #1E2A38;
     }
     .logo {
       height: 48px;
@@ -35,11 +34,11 @@
       transform: translateY(-2px) scale(1.04);
     }
     .header {
-      background: #18213b;
+      background: #d3ecf9; /* Голубой header */
       box-shadow: 0 2px 16px #222a4740;
     }
     nav a {
-      color: #C6DBF9;
+      color: #16637a;
       transition: color 0.18s;
     }
     nav a:hover {
@@ -62,7 +61,7 @@
   <header class="header p-6 flex justify-between items-center">
     <div class="flex items-center space-x-2">
       <img src="logo.png" alt="GTNEra Logo" class="logo" />
-      <span class="text-xl md:text-3xl font-bold tracking-wide" style="color:#EFF3F8;">GTNEra™</span>
+      <span class="text-xl md:text-3xl font-bold tracking-wide" style="color:#1E2A38;">GTNEra™</span>
     </div>
     <nav id="gtn-nav" class="flex flex-col space-y-3 text-base font-medium text-left
                 md:flex-row md:space-y-0 md:space-x-5 md:text-sm md:text-left">
@@ -76,7 +75,7 @@
     </nav>
   </header>
 
-  <!-- Скрипт автоактивации навигации (оставил как у тебя) -->
+  <!-- Скрипт автоактивации навигации -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const nav = document.getElementById('gtn-nav');
@@ -129,9 +128,9 @@
       <a href="https://gtnera.ai" target="_blank" class="block">
         <img src="logogtnbig.png" alt="GTNEra Logo"
              class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-2xl shadow"
-             style="border: 2.5px solid #0FF8C2; box-shadow: 0 4px 18px #10B4BF25;" />
+             style="border: 2.5px solid #10B4BF; box-shadow: 0 4px 18px #10B4BF25;" />
       </a>
-      <span class="block text-sm md:text-base font-bold tracking-wide text-[#EFF3F8] mt-2">GTNEra™</span>
+      <span class="block text-sm md:text-base font-bold tracking-wide text-[#1E2A38] mt-2">GTNEra™</span>
       <a href="https://gtnera.ai" target="_blank"
          class="gtn-btn mt-2 px-5 py-1.5 text-sm font-semibold" style="min-width:104px;">Visit GTNEra</a>
     </div>
@@ -139,9 +138,9 @@
       <a href="https://tenai.tech" target="_blank" class="block">
         <img src="logotnimiddel.png" alt="TeNAI Logo"
              class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-2xl shadow"
-             style="border: 2.5px solid #0FF8C2; box-shadow: 0 4px 18px #10B4BF25;" />
+             style="border: 2.5px solid #10B4BF; box-shadow: 0 4px 18px #10B4BF25;" />
       </a>
-      <span class="block text-sm md:text-base font-bold tracking-wide text-[#EFF3F8] mt-2">TeNAI™</span>
+      <span class="block text-sm md:text-base font-bold tracking-wide text-[#1E2A38] mt-2">TeNAI™</span>
       <a href="https://tenai.tech" target="_blank"
          class="gtn-btn mt-2 px-5 py-1.5 text-sm font-semibold" style="min-width:104px;">Visit TeNAI</a>
     </div>
